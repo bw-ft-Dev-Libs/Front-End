@@ -4,7 +4,7 @@ import {MadLibContext} from '../hooks/MadLibContext'
 
 
 
-const MadlibInput = () => {
+const MadlibInput = (props) => {
     
     const {words, setWords} = useContext(MadLibContext)
     const handleChange = e => {
@@ -16,10 +16,15 @@ const MadlibInput = () => {
 
     }
 
+    const handleSubmit = e => {
+        e.preventDefault()
+        props.history.push('/create')
+    }
+
     return (
         <div className='form-container'>
             <h2 className='form-header'> Enter your words to create a Dev-Lib!</h2>
-            <form className='input-form'>
+            <form className='input-form' onSubmit={handleSubmit}>
                 <label>
                     Enter a noun.
                     <input name='noun' type='text' value={words.noun} onChange={handleChange} />

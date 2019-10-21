@@ -3,24 +3,24 @@ import React, {useState} from 'react';
 import './App.css';
 import './styling/madlibInput.css'
 
-import MadlibInput from './components/MadlibInput'
+// import MadlibInput from './components/MadlibInput'
 
-import {MadLibContext} from './hooks/MadLibContext'
+// import {MadLibContext} from './hooks/MadLibContext'
 
-function App() {
+function App(props) {
 
-  const [words, setWords] = useState({
-    noun:'',
-    verb:'',
-    adverb:'',
-    adjective:''
-  })
+  // const [words, setWords] = useState({
+  //   noun:'',
+  //   verb:'',
+  //   adverb:'',
+  //   adjective:''
+  // })
 
-  return (
-    <div className="App">
-      <MadLibContext.Provider value = {{words, setWords}}>
-        <MadlibInput />
-      </MadLibContext.Provider>  
+  // return (
+  //   <div className="App">
+  //     <MadLibContext.Provider value = {{words, setWords}}>
+  //       <MadlibInput props={props}/>
+  //     </MadLibContext.Provider>  
     </div>
   );
 }
