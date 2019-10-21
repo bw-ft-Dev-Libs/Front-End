@@ -1,0 +1,12 @@
+.input-form{
+    margin:3vh;
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+input{
+    margin:2vh;
+}
