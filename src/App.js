@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
+
 import './App.css';
-import MadlibInput from './components/MadlibInput'
 import './styling/madlibInput.css'
+
+import MadlibInput from './components/MadlibInput'
+
 import {MadLibContext} from './hooks/MadLibContext'
 
 function App() {
