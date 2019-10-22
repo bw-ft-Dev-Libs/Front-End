@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Landing, Title, Blurb } from "../styles/WelcomeStyles";
+import { ButtonFun } from "./Buttons";
 
 export default function Welcome() {
     return (
@@ -15,6 +16,7 @@ export default function Welcome() {
                     <br/>
                     Developers
                 </Blurb>
+                <ButtonFun />
             </Landing>
         </div>
     )
