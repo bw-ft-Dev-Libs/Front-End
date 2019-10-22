@@ -43,18 +43,21 @@ const CreateMadLib = props => {
     const {madLibs, setMadlibs} = useContext(MadLibContext)
     const [addMadLib, setAddMadlib] = useState ([])
     
+
     useEffect(()=> {
+       setAddMadlib(data[0]) 
         axiosWithAuth()
             .get('/api/devLib')
             .then(res => {
                 setMadlibs(data.res)
+                
             })
             .catch(err => console.log(err.response))
-    })
+    }, [])
 
     const handleSubmit = e => {
         e.preventDefault()
-        setAddMadlib(data[0])
+        
         axiosWithAuth()
             .post('/api/devLib', addMadLib )
             .then(() => {
