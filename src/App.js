@@ -1,15 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Welcomepage from "./components/Welcomepage";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from "./components/PrivateRoute";
 import Navbar from "./components/NavBar";
 import Profile from "./components/Profile";
 import './App.css';
-// import DivLib from "./components/DevLib";
+import DivLib from "./components/DevLib";
+import MadlibInput from './components/MadlibInput'
+import {WordsContext} from './hooks/WordsContext'
+import {MadLibContext} from './hooks/MadLibContext'
 
-function App() {
+function App(props) {
+
+  const [words, setWords] = useState({
+    noun:'',
+    verb:'',
+    adverb:'',
+    adjective:''
+  })
+
+
+
   return (
     <div className="App">
       <Navbar />
