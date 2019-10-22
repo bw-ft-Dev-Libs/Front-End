@@ -46,20 +46,20 @@ function App(props) {
       <Navbar />
       <Router>
         <Switch>
-          {/* <MadLibContext.Provider value = {{words, setWords}}> */}
-           {/* <WordsContext.Provider> */}
-              <Route exact path="/" component={Welcome} /> 
+
+          <MadLibContext.Provider value = {{madLibs, setMadlibs }} >
+           <WordsContext.Provider value = {{words, setWords}}>
+
+              <Route exact path="/" component={Welcomepage} /> 
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              {/* <Route exact path="/input" component={MadlibInput} /> */}
-              <PrivateRoute exact path="/profile" component={Profile} /> 
-              {/* <Route exact path="/profile" component={Profile} /> */}
-              <DevLib />
-               {/* <MadlibInput props={props}/> */}
-           {/* </WordsContext.Provider> */}
-          {/* </MadLibContext.Provider> */}
-
-    
+              <PrivateRoute exact path="/profile" component={Profile} />
+              <Route path ='/devlibs' component={DevLib} />            
+              <Route path ='/input' render={props => <MadlibInput {...props}/>}/>              
+              <Route path ='/create' render={props => <CreateMadLib {...props}/>} />
+              
+           </WordsContext.Provider>
+          </MadLibContext.Provider>
              
         </Switch>
       </Router>
