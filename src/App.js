@@ -17,17 +17,17 @@ function App() {
         <Switch>
           <MadLibContext.Provider value = {{words, setWords}}>
            <WordsContext.Provider>
-            <Route exact path="/" component={Welcomepage} /> 
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            {/* <PrivateRoute exact path="/profile" component={Profile} />  */}
-            <Route exact path="/profile" component={Profile} />
-              <MadlibInput props={props}/>
+              <Route exact path="/" component={Welcomepage} /> 
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              {/* <PrivateRoute exact path="/profile" component={Profile} />  */}
+              {/* <DivLib /> */}
+              <Route exact path="/profile" component={Profile} />
+               <MadlibInput props={props}/>
            </WordsContext.Provider>
-      </MadLibContext.Provider>
+          </MadLibContext.Provider>
     
-          {/* <DivLib /> */}
-          
+             
         </Switch>
       </Router>
     </div>
