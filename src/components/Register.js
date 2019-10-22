@@ -4,7 +4,7 @@
 import React from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { Button } from "../styles/ButtonStyles"
-import { Card, Box } from "../styles/RegisterStyles";
+import { Card, Box } from "../styles/FormsStyles";
 import { ButtonAcct } from "./Buttons";
 
 
@@ -26,7 +26,8 @@ export default function Register(props) {
                 props.history.push("/login");
             })
             .catch(error => {
-                console.log("SIGNUPERROR", error.response)
+                console.log("SIGNUPERROR", error.response.data.message)
+                alert(error.response.data.message)
                 setForm({ username: "", password: "" }); 
          });
     };
