@@ -1,15 +1,22 @@
+//Profile CREATED BY J.ATWOOD
+//Styles Welcome.js, 
+
 import styled from "styled-components";
 
-const Welcome = styled.div `
+//Main display box on Welcome
+const Landing = styled.div `
     width: 70%;
     height: 450px;
     background: #D6E3F3;
     // border: solid red 2px;
     margin: 0 auto;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     padding-top: 50px;
 `
+
+//Smaller Title/Header Box within Landing
 const Title = styled.h1 `
     width: 400px;
     height: 75px;
@@ -23,6 +30,8 @@ const Title = styled.h1 `
     color: #354458;
     font-weight: normal;
 `
+
+//description h2's within the Landing on welcome
 const Blurb = styled.h2 `
     text-align: center;
     color: #354458;
@@ -31,4 +40,4 @@ const Blurb = styled.h2 `
     // border: solid magenta 2px;
 `
 
-export { Welcome, Title, Blurb };
+export { Landing, Title, Blurb };

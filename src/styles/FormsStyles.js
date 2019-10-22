@@ -1,5 +1,9 @@
+//Profile CREATED BY J.ATWOOD
+//Styles Register.js, Login.js, Buttons.js
+
 import styled from "styled-components";
 
+//Buttons.js links 
 const AcctLink = styled.div `
     text-align: center;
     font-size: 15px;
