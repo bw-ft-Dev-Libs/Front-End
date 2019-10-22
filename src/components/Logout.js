@@ -1,9 +1,8 @@
 //LOGOUT CREATED BY J.ATWOOD
 
 import React from "react";
-import { Button } from "../styles/ButtonStyles";
 
-export default function LogOut() {
+export default function Logout() {
 
     const logout = e => {
         localStorage.clear();
@@ -12,6 +11,6 @@ export default function LogOut() {
 
 return (
     <div>
-        <Button onClick={logout} >LOGOUT</Button>
+        <button onClick={logout} >LOGOUT</button>
     </div>
 )};

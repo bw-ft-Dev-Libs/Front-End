@@ -4,7 +4,7 @@
 import React from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { Button } from "../styles/ButtonStyles"
-import { Card, Box } from "../styles/RegisterStyles";
+import { Card, Box } from "../styles/FormsStyles";
 import { ButtonSign } from "./Buttons";
 
 const Login = props => {
@@ -22,7 +22,7 @@ const Login = props => {
             .then(res => {
                 console.log("LOGIN", res);
                 localStorage.setItem("token", res.data.payload);
-                props.history.push("/");
+                props.history.push("/profile");
             })
             .catch(error => {
                 console.log("LOGINERROR", error.response.data.message)
@@ -30,7 +30,6 @@ const Login = props => {
                 setForm({ username: "", password: "" }); 
          });
     };
-
 
     return (
         <Card>
