@@ -46,36 +46,19 @@ function App(props) {
       <Navbar />
       <Router>
         <Switch>
-<<<<<<< HEAD
           <MadLibContext.Provider value = {{madLibs, setMadlibs }} >
            <WordsContext.Provider value = {{words, setWords}}>
 
-              <Route exact path="/" component={Welcomepage} /> 
+              <Route exact path="/" component={Welcome} /> 
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              {/* <PrivateRoute exact path="/profile" component={Profile} />  */}
+              <PrivateRoute exact path="/profile" component={Profile} /> 
               <Route path ='/devlibs' component={DevLib} />
-              <Route exact path="/profile" component={Profile} />
               <Route path ='/input' render={props => <MadlibInput {...props}/>}/>              
               <Route path ='/create' render={props => <CreateMadLib {...props}/>} />
               
            </WordsContext.Provider>
           </MadLibContext.Provider>
-=======
-          {/* <MadLibContext.Provider value = {{words, setWords}}> */}
-           {/* <WordsContext.Provider> */}
-              <Route exact path="/" component={Welcome} /> 
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-
-              <PrivateRoute exact path="/profile" component={Profile} /> 
-              {/* <Route exact path="/profile" component={Profile} /> */}
-              <DevLib />
-               {/* <MadlibInput props={props}/> */}
-           {/* </WordsContext.Provider> */}
-          {/* </MadLibContext.Provider> */}
-
->>>>>>> 3b31ec2629cb11cd29964261b619d742f8005d58
     
              
         </Switch>
