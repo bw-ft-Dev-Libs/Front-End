@@ -7,7 +7,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Navbar from "./components/NavBar";
 import Profile from "./components/Profile";
 import './App.css';
-import DivLib from "./components/DevLib";
+import DevLib from "./components/DevLib";
 import MadlibInput from './components/MadlibInput'
 import {WordsContext} from './hooks/WordsContext'
 import {MadLibContext} from './hooks/MadLibContext'
@@ -34,7 +34,7 @@ function App(props) {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               {/* <PrivateRoute exact path="/profile" component={Profile} />  */}
-              {/* <DivLib /> */}
+              {/* <DevLib /> */}
               <Route exact path="/profile" component={Profile} />
                <MadlibInput props={props}/>
            </WordsContext.Provider>
