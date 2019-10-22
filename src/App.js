@@ -10,7 +10,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar";
 import Profile from "./components/Profile";
 import DevLib from "./components/DevLib";
 import MadlibInput from './components/MadlibInput'
@@ -53,15 +53,13 @@ function App(props) {
               <Route exact path="/" component={Welcomepage} /> 
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              {/* <PrivateRoute exact path="/profile" component={Profile} />  */}
-              <Route path ='/devlibs' component={DevLib} />
-              <Route exact path="/profile" component={Profile} />
+              <PrivateRoute exact path="/profile" component={Profile} />
+              <Route path ='/devlibs' component={DevLib} />            
               <Route path ='/input' render={props => <MadlibInput {...props}/>}/>              
               <Route path ='/create' render={props => <CreateMadLib {...props}/>} />
               
            </WordsContext.Provider>
           </MadLibContext.Provider>
-
              
         </Switch>
       </Router>
