@@ -21,13 +21,8 @@ const Login = props => {
             .post("/api/auth/login", form) 
             .then(res => {
                 console.log("LOGIN", res);
-<<<<<<< HEAD
                 localStorage.setItem("token", res.data.token);
                 props.history.push("/");
-=======
-                localStorage.setItem("token", res.data.payload);
-                props.history.push("/profile");
->>>>>>> 3b31ec2629cb11cd29964261b619d742f8005d58
             })
             .catch(error => {
                 console.log("LOGINERROR", error.response.data.message)
