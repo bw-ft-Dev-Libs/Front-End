@@ -21,7 +21,7 @@ const Login = props => {
             .post("/api/auth/login", form) 
             .then(res => {
                 console.log("LOGIN", res);
-                localStorage.setItem("token", res.data.payload);
+                localStorage.setItem("token", res.data.token);
                 props.history.push("/");
             })
             .catch(error => {
