@@ -41,6 +41,30 @@ const MadlibInput = (props) => {
                     Enter an adverb.
                     <input name='adverb' type='text' value={words.adverb} onChange={handleChange} />
                 </label>
+                <label>
+                    Enter a noun.
+                    <input name='noun' type='text' value={words.noun} onChange={handleChange} />
+                </label>
+                <label>
+                    Enter a noun.
+                    <input name='noun' type='text' value={words.noun} onChange={handleChange} />
+                </label>
+                <label>
+                    Enter a noun.
+                    <input name='noun' type='text' value={words.noun} onChange={handleChange} />
+                </label>
+                <label>
+                    Enter a noun.
+                    <input name='noun' type='text' value={words.noun} onChange={handleChange} />
+                </label>
+                <label>
+                    Enter a noun.
+                    <input name='noun' type='text' value={words.noun} onChange={handleChange} />
+                </label>
+                <label>
+                    Enter a noun.
+                    <input name='noun' type='text' value={words.noun} onChange={handleChange} />
+                </label>
 
                 <button className='input-submit-button'> Submit </button>
 
