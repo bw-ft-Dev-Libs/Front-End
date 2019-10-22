@@ -27,11 +27,11 @@ const MadlibInput = (props) => {
             <form className='input-form' onSubmit={handleSubmit}>
                 <label>
                     Enter a noun.
-                    <input name='noun1' type='text' value={words.noun} onChange={handleChange} />
+                    <input name='noun1' type='text' value={words.noun1} onChange={handleChange} />
                 </label>
                 <label>
                     Enter a verb.
-                    <input name='verb1' type='text' value={words.verb} onChange={handleChange} />
+                    <input name='verb1' type='text' value={words.verb1} onChange={handleChange} />
                 </label>
                 <label>
                     Enter an adjective.
@@ -43,31 +43,31 @@ const MadlibInput = (props) => {
                 </label>
                 <label>
                     Enter a noun.
-                    <input name='noun2' type='text' value={words.noun} onChange={handleChange} />
+                    <input name='noun2' type='text' value={words.noun2} onChange={handleChange} />
                 </label>
                 <label>
                     Enter a noun.
-                    <input name='noun3' type='text' value={words.noun} onChange={handleChange} />
+                    <input name='noun3' type='text' value={words.noun3} onChange={handleChange} />
                 </label>
                 <label>
                     Enter a noun.
-                    <input name='noun4' type='text' value={words.noun} onChange={handleChange} />
+                    <input name='noun4' type='text' value={words.noun4} onChange={handleChange} />
                 </label>
                 <label>
                     Enter a noun.
-                    <input name='noun5' type='text' value={words.noun} onChange={handleChange} />
+                    <input name='noun5' type='text' value={words.noun5} onChange={handleChange} />
                 </label>
                 <label>
                     Enter a verb.
-                    <input name='verb2' type='text' value={words.noun} onChange={handleChange} />
+                    <input name='verb2' type='text' value={words.verb2} onChange={handleChange} />
                 </label>
                 <label>
                     Enter a pronoun.
-                    <input name='Pnoun1' type='text' value={words.noun} onChange={handleChange} />
+                    <input name='pNoun1' type='text' value={words.pNoun1} onChange={handleChange} />
                 </label>
                 <label>
                     Enter a pronoun.
-                    <input name='Pnoun2' type='text' value={words.noun} onChange={handleChange} />
+                    <input name='pNoun2' type='text' value={words.pNoun2} onChange={handleChange} />
                 </label>
 
                 <button className='input-submit-button'> Submit </button>
