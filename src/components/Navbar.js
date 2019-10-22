@@ -1,6 +1,6 @@
 import React from "react";
 import { Navvy, Logo, NavElems } from "../styles/NavStyle";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 export default function NavBar() {
     return (

@@ -6,11 +6,12 @@ const Test = styled.div `
     display: flex;
     margin: 0 auto;
     padding: 30px;
+    margin-bottom: 20px;
 `
 const Fun = styled.div `
     // border: solid 2px magenta;
     width: 200px;
-    height: 30px;
+    height: 50px;
     background: #29ABA4;
     text-align: center;
     margin: 0 auto;
