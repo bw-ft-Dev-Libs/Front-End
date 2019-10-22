@@ -2,8 +2,8 @@
 //NAVBAR CREATED BY J.ATWOOD
 
 import React from "react";
-import { Button, A, Test, Fun } from "../styles/ButtonStyles";
-import { AcctLink } from "../styles/RegisterStyles";
+import { Button, A, Test } from "../styles/ButtonStyles";
+import { AcctLink } from "../styles/FormsStyles";
 
 
 const ButtonReg = () => {
@@ -28,15 +28,15 @@ const ButtonLog = () => {
 
 }
 
-const ButtonFun = () => {
-    return (
-        <Test>
-            <Fun>
-                <A href="/register">Links to /register</A>
-            </Fun>
-        </Test>
-    )
-}
+// const ButtonFun = () => {
+//     return (
+//         <Test>
+//             <Fun>
+//                 <A href="/register">Links to /register</A>
+//             </Fun>
+//         </Test>
+//     )
+// }
 
 const ButtonAcct = () => {
     return (
@@ -55,4 +55,4 @@ const ButtonSign = () => {
 }
 
 
-export { ButtonReg, ButtonLog, ButtonFun, ButtonAcct, ButtonSign }
+export { ButtonReg, ButtonLog, ButtonAcct, ButtonSign }

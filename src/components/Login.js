@@ -4,7 +4,7 @@
 import React from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { Button } from "../styles/ButtonStyles"
-import { Card, Box } from "../styles/RegisterStyles";
+import { Card, Box } from "../styles/FormsStyles";
 import { ButtonSign } from "./Buttons";
 
 const Login = props => {
@@ -21,8 +21,13 @@ const Login = props => {
             .post("/api/auth/login", form) 
             .then(res => {
                 console.log("LOGIN", res);
+<<<<<<< HEAD
                 localStorage.setItem("token", res.data.token);
                 props.history.push("/");
+=======
+                localStorage.setItem("token", res.data.payload);
+                props.history.push("/profile");
+>>>>>>> 3b31ec2629cb11cd29964261b619d742f8005d58
             })
             .catch(error => {
                 console.log("LOGINERROR", error.response.data.message)
@@ -30,7 +35,6 @@ const Login = props => {
                 setForm({ username: "", password: "" }); 
          });
     };
-
 
     return (
         <Card>
