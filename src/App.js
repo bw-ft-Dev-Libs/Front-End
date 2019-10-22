@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/NavBar";
 import Profile from "./components/Profile";
 import './App.css';
+// import DivLib from "./components/DevLib";
 
 function App() {
   return (
@@ -14,15 +15,30 @@ function App() {
       <Navbar />
       <Router>
         <Switch>
-          <Route exact path="/" component={Welcomepage} /> 
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
-          {/* <PrivateRoute exact path="/profile" component={Profile} />  */}
-          <Route exact path="/profile" component={Profile} />
+          <MadLibContext.Provider value = {{words, setWords}}>
+           <WordsContext.Provider>
+              <Route exact path="/" component={Welcomepage} /> 
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              {/* <PrivateRoute exact path="/profile" component={Profile} />  */}
+              {/* <DivLib /> */}
+              <Route exact path="/profile" component={Profile} />
+               <MadlibInput props={props}/>
+           </WordsContext.Provider>
+          </MadLibContext.Provider>
+    
+             
         </Switch>
       </Router>
     </div>
   );
+
+
+
+
+
+
+
 }
 
 export default App;

@@ -4,9 +4,13 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
+    "formik": "^1.5.8",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+<<<<<<< HEAD
     "react-router": "^5.1.2",
+=======
+>>>>>>> 0d8175c043663085fa568613af0349554c3db9ca
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "styled-components": "^4.4.0"
