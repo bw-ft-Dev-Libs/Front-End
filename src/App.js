@@ -41,10 +41,10 @@ function App(props) {
         <Switch>
           <MadLibContext.Provider value={{ madLibs, setMadlibs }}>
             <WordsContext.Provider value={{ words, setWords }}>
-              <Route exact path="/" component={Welcomepage} />
+              <Route exact path="/" component={Welcome} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              {/* <PrivateRoute exact path="/profile" component={Profile} />  */}
+              <PrivateRoute exact path="/profile" component={Profile} />
               <Route path="/devlibs" component={DevLib} />
               <Route exact path="/profile" component={Profile} />
               <Route
