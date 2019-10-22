@@ -7,11 +7,9 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-router": "^5.1.2",
-<<<<<<< HEAD
     "react-router-dom": "^5.1.2",
-=======
->>>>>>> 58a4f07be2d7ad6480cd3018a21995eb91208506
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "styled-components": "^4.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
