@@ -1,9 +1,13 @@
 import React, {useState} from 'react';
-
+import Welcomepage from "./components/Welcomepage";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import PrivateRoute from "./components/PrivateRoute";
+import Navbar from "./components/NavBar";
+import Profile from "./components/Profile";
 import './App.css';
-import './styling/madlibInput.css'
-
-
+import DivLib from "./components/DevLib";
 import MadlibInput from './components/MadlibInput'
 import {WordsContext} from './hooks/WordsContext'
 import {MadLibContext} from './hooks/MadLibContext'
@@ -17,15 +21,38 @@ function App(props) {
     adjective:''
   })
 
+
+
   return (
     <div className="App">
-      <MadLibContext.Provider value = {{words, setWords}}>
+      <Navbar />
+      <Router>
+        <Switch>
+          <MadLibContext.Provider value = {{words, setWords}}>
            <WordsContext.Provider>
-              <MadlibInput props={props}/>
+              <Route exact path="/" component={Welcomepage} /> 
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              {/* <PrivateRoute exact path="/profile" component={Profile} />  */}
+              <DivLib />
+              <Route exact path="/profile" component={Profile} />
+               <MadlibInput props={props}/>
            </WordsContext.Provider>
-      </MadLibContext.Provider>  
+          </MadLibContext.Provider>
+    
+             
+        </Switch>
+      </Router>
     </div>
   );
+
+
+
+
+
+
+
 }
 
 export default App;
+

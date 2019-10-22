@@ -1,13 +1,14 @@
 //FILE PRESENT DURING FIRST GIT PULL ORIGIN MASTER
-//LOGIN CREATED BY J.ATWOOD
+//SIGNUP CREATED BY J.ATWOOD
 
 import React from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { Button } from "../styles/ButtonStyles"
 import { Card, Box } from "../styles/RegisterStyles";
-import { ButtonSign } from "./Buttons";
+import { ButtonAcct } from "./Buttons";
 
-const Login = props => {
+
+export default function Register(props) {
 
     const [form, setForm] = React.useState({ username: "", password: "" });
 
@@ -18,35 +19,33 @@ const Login = props => {
     const login = e => {
         e.preventDefault(); 
         axiosWithAuth()
-            .post("/api/auth/login", form) 
+            .post("/api/auth/register", form) 
             .then(res => {
                 console.log("LOGIN", res);
                 localStorage.setItem("token", res.data.payload);
-                props.history.push("/");
+                props.history.push("/login");
             })
             .catch(error => {
-                console.log("LOGINERROR", error.response.data.message)
-                alert(error.response.data.message)
+                console.log("SIGNUPERROR", error.response)
                 setForm({ username: "", password: "" }); 
          });
     };
 
-
     return (
         <Card>
-        
-            <h2>LOGIN</h2>
+            <h2>CREATE ACCOUNT</h2>
             <Box>
             <form onSubmit={login}>
-            <label>Username</label>
+                <label>Username</label>
                 <input 
                     required
-                    type="text" 
+                    type="text"
                     placeholder="username"
                     name="username" 
                     onChange={handleChanges}
                     value={form.username}
                 />
+            
                 <label>Password</label>
                 <input 
                     required
@@ -56,14 +55,11 @@ const Login = props => {
                     onChange={handleChanges}
                     value={form.password}
                 />
-                <Button type="submit">LOG IN</Button>
-                <ButtonSign />
+                <Button type="submit">SUBMIT</Button>
+                <ButtonAcct />
             </form>
             </Box>
 
-            </Card>
-        
+        </Card>
     )
 }
-
-export default Login;
