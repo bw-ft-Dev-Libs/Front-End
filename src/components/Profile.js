@@ -6,9 +6,15 @@ import ProfileCard from "./ProfileCard";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { CardCont } from "../styles/CardStyles";
 
+
 export default function Profile() {
+  
+
+
   const [profLib, setprofLib] = useState();
+  const [isFetching, setFetching] = useState(false)
   const id = Number(localStorage.getItem('user_id'))
+  
   
   useEffect(()=>{
       axiosWithAuth()
@@ -22,10 +28,8 @@ export default function Profile() {
       .catch(err => {
         console.log(err);
       });  
-  }, [])
+  }, [isFetching]) 
 
-  
-// console.log(profLib[0])
   
  
   if (!profLib){
@@ -37,13 +41,15 @@ export default function Profile() {
     )
   }
 
+
   return (
     <div>
       {profLib.map(lib => {
         if (lib.user_id === id) {
            return (
              <CardCont key={lib.id}>        
-                <ProfileCard lib={lib}  />
+                <ProfileCard lib={lib} isFetching={isFetching} setFetching={setFetching}  />                 
+                                    
               </CardCont>
            ) 
         }

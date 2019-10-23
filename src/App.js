@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./App.css";
 import "./styling/madlibInput.css";
 import "./styling/dropdown.css";
+import './styling/modal.css'
 //Components
 import Welcome from "./components/Welcome";
 import Login from "./components/Login";
