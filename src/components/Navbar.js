@@ -12,7 +12,7 @@ export default function NavBar() {
             </Logo>
             <NavElems>
                 <a href="/">Home</a>
-                <a href="/profile" onClick={ () => window.confirm("Must be logged in to view profile")}>Profile</a>
+                <a href="/profile" /*onClick={ () => window.confirm("Must be logged in to view profile")} */ >Profile</a>
                 {/* <a href="/login" onClick={ () => alert("Must be logged in to view profile")}>Login</a> */}
                 <a href="/login">Login</a>
                 <a href="/register">Signup</a>

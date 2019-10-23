@@ -6,12 +6,20 @@ import ProfileCard from "./ProfileCard";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { CardCont, Card } from "../styles/CardStyles";
 
-export default function Profile() {
-  const [profLib, setprofLib] = useState();
-  const id = Number(localStorage.getItem("user_id"));
 
-  useEffect(() => {
-    axiosWithAuth()
+export default function Profile() {
+  
+
+
+  const [profLib, setprofLib] = useState();
+
+  const [isFetching, setFetching] = useState(false)
+  const id = Number(localStorage.getItem('user_id'))
+  
+  
+  useEffect(()=>{
+      axiosWithAuth()
+
       .get(`/api/devLib/`)
       .then(res => {
         console.log(res.data.data, "libs!!!");
@@ -20,32 +28,35 @@ export default function Profile() {
       })
       .catch(err => {
         console.log(err);
-      });
-  }, []);
 
-  // console.log(profLib[0])
+      });  
+  }, [isFetching]) 
 
-  if (!profLib) {
-    return <h1>Loading..</h1>;
-  } else if (profLib.length === 0) {
-    return <h2>You haven't created any Dev-Libs!</h2>;
+  
+ 
+  if (!profLib){
+    return <h1>Loading..</h1>
   }
+  else if (profLib.length === 0) {
+    return (
+      <h2>You haven't created any Dev-Libs!</h2>
+    )
+
+  }
+
 
   return (
     <CardCont>
       {profLib.map(lib => {
         if (lib.user_id === id) {
-          return (
-            <Card>
-              <ProfileCard key={lib.id} lib={lib} />
-              <button
-              //  onClick={() => openModal()}
-              >
-                Edit
-              </button>
-              <button>Delete</button>
-            </Card>
-          );
+
+           return (
+             <CardCont key={lib.id}>        
+                <ProfileCard lib={lib} isFetching={isFetching} setFetching={setFetching}  />                 
+                                    
+              </CardCont>
+           ) 
+
         }
       })}
 
