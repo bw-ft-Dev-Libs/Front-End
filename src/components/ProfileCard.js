@@ -16,13 +16,13 @@ const ProfileCard = props => {
 
  const handleDelete = () => {
    console.log(props.lib)
-    // props.setFetching(true)
-    // axiosWithAuth()
-    //   .delete('/api/devLib', props.lib)
-    //   .then(res=>{
-    //     props.setFetching(false)
-    //   })
-    //   .catch(err=> console.log(err))
+    props.setFetching(true)
+    axiosWithAuth()
+      .delete('/api/devLib', props.lib)
+      .then(res=>{
+        props.setFetching(false)
+      })
+      .catch(err=> console.log(err))
   }
 
   return (
