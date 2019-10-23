@@ -36,10 +36,12 @@ const ProfileCard = props => {
     <div>
 
       <Card>
+
         <p>{props.lib.lib}</p>
         <button onClick={handleOpen}>Edit</button>
         {open && <SimpleModal handleClose={handleClose} open={open} lib={props.lib} isFetching={props.isFetching} setFetching={props.setFetching} />}
         <button onClick={handleDelete}>Delete</button>
+
       </Card>
 
 
@@ -48,3 +50,6 @@ const ProfileCard = props => {
 };
 
 export default ProfileCard;
+
+//Styling for buttons and a delete confirmation window 
+//available in DeleteButtonCode.js deadfile

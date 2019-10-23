@@ -62,5 +62,6 @@ export default function Profile() {
 
       <Logout />
     </CardCont>
+
   );
 }

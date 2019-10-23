@@ -27,7 +27,7 @@ const Title = styled.h1 `
     justify-content: center;
     padding-top: 15px;
     font-size: 2.5rem;
-    color: #354458;
+    color: #354458; 
     font-weight: normal;
 `
 
