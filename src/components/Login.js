@@ -22,6 +22,7 @@ const Login = props => {
             .then(res => {
                 console.log("LOGIN", res);
                 localStorage.setItem("token", res.data.token);
+                localStorage.setItem("user_id", res.data.userId)
                 props.history.push("/");
             })
             .catch(error => {
