@@ -1,6 +1,6 @@
 import React from "react";
 import { Navvy, Logo, NavElems } from "../styles/NavStyle";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 export default function NavBar() {
     return (
@@ -16,7 +16,7 @@ export default function NavBar() {
                 {/* <a href="/login" onClick={ () => alert("Must be logged in to view profile")}>Login</a> */}
                 <a href="/login">Login</a>
                 <a href="/register">Signup</a>
-                <a href="/">Empty</a>
+                <a href="/devlibs">DevLibs</a>
             </NavElems>
         </Navvy>
     </Router>
