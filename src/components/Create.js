@@ -11,12 +11,12 @@ const CreateMadLib = props => {
     const data = [
         {
           
-          'lib': `If you want to become ${words.noun1}.literate, here are some key
-                ${words.pNoun1} that you should ${words.verb1} as quickly as possible:
+          'lib': `If you want to become ${words.noun1} literate, here are some key
+                ${words.adjective} that you should ${words.verb1} as quickly as possible:
     
                 CD ROM: Stands for compact ${words.noun2}... read only
-                ${words.noun3}. This compact disc can hold as many as 600 ${words.noun4},
-                ${words.pNoun2}, which is the equivalent of 700 floppy ${words.adverb}.`,
+                ${words.noun3}. This compact disc can hold as many as 600 ${words.adverb},
+                ${words.verb2}, which is the equivalent of 700 floppy ${words.noun4}.`,
           'user_id': Number(localStorage.getItem('user_id')),
           'category_id': 1
         },
