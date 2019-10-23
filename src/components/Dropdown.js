@@ -7,7 +7,7 @@ const Dropdown = () => {
 
     return (
         <div class="dropdown">
-            <span>Categories</span>
+            <span>Select a Category</span>
             <div class="dropdown-content">
             <p onClick={setCategories(1)}>Action</p>
             <p onClick={setCategories(2)}>Adventure</p>
