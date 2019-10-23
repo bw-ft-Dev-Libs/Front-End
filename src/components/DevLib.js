@@ -10,7 +10,7 @@ const DevLib = props => {
     axiosWithAuth()
       .get("/api/devLib")
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data, "devLib!!!");
         setUsers(res.data.data);
       })
       .catch(err => {
