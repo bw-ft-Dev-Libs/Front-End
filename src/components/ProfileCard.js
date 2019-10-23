@@ -17,8 +17,13 @@ const ProfileCard = props => {
  const handleDelete = () => {
    console.log(props.lib)
     props.setFetching(true)
+    const deleteItem = {
+      id: props.lib.id,
+      user_id: props.lib.user_id
+    }
+    console.log('from delete', typeof(deleteItem.id), typeof(deleteItem.user_id))
     axiosWithAuth()
-      .delete('/api/devLib', props.lib)
+      .delete('/api/devLib', deleteItem)      
       .then(res=>{
         props.setFetching(false)
       })
