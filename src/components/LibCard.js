@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Card } from "../styles/CardStyles";
 
 const LibCard = props => {
   return (
-    <div>
+    <Card>
       <p>{props.lib.lib}</p>
-    </div>
+    </Card>
   );
   //   }
 };

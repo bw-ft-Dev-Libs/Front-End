@@ -8,7 +8,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
-import Navbar from "./components/NavBar";
+import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
 import DevLib from "./components/DevLib";
 import MadlibInput from "./components/MadlibInput";
