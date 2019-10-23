@@ -4,50 +4,64 @@ import React, { useEffect, useState } from "react";
 import Logout from "./Logout";
 import ProfileCard from "./ProfileCard";
 import axiosWithAuth from "../utils/axiosWithAuth";
-import { CardCont } from "../styles/CardStyles";
+import { CardCont, Card } from "../styles/CardStyles";
 
-//{id: 5, lib: "another extremely good madlib", user_id: 2, category_id: 3}
 
-export default function Profile(props) {
-  // const [profLib, setprofLib] = useState([]);
+export default function Profile() {
+  
 
-  // useEffect(() => {
-  //   axiosWithAuth()
-  //     .get(`/api/devLib`)
-  //     .then(res => {
-  //       console.log(res.data, "libs!!!");
-  //       setprofLib(res.data.data);
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  //   }, [])
 
-   
-  //   const id = localStorage.getItem("user_id")
-  //   console.log(profLib);
+  const [profLib, setprofLib] = useState();
+
+  const [isFetching, setFetching] = useState(false)
+  const id = Number(localStorage.getItem('user_id'))
+  
+  
+  useEffect(()=>{
+      axiosWithAuth()
+
+      .get(`/api/devLib/`)
+      .then(res => {
+        console.log(res.data.data, "libs!!!");
+        console.log(res.data.data[0].id);
+        setprofLib(res.data.data);
+      })
+      .catch(err => {
+        console.log(err);
+
+      });  
+  }, [isFetching]) 
+
+  
+ 
+  if (!profLib){
+    return <h1>Loading..</h1>
+  }
+  else if (profLib.length === 0) {
+    return (
+      <h2>You haven't created any Dev-Libs!</h2>
+    )
+
+  }
+
 
   return (
-    <div>
-{/* 
-    {profLib.filter(lib => {
-      if (id === lib.user_id) {
-        setprofLib(lib);
-        return (
-          <ProfileCard lib={lib}/>
-        )
-      } else {
-        return (
-          <h3>There is nothing to show</h3>
-        )
+    <CardCont>
+      {profLib.map(lib => {
+        if (lib.user_id === id) {
+
+           return (
+             <CardCont key={lib.id}>        
+                <ProfileCard lib={lib} isFetching={isFetching} setFetching={setFetching}  />                 
+                                    
+              </CardCont>
+           ) 
+
         }
-    })
-    } */}
-        <h2>Profile</h2>
-        <CardCont>
-          <ProfileCard />
-        </CardCont>
-        <Logout />
-    </div>
+      })}
+
+      <Logout />
+    </CardCont>
+
   );
 }

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./App.css";
 import "./styling/madlibInput.css";
 import "./styling/dropdown.css";
+import './styling/modal.css'
 //Components
 import Welcome from "./components/Welcome";
 import Login from "./components/Login";
@@ -36,6 +37,11 @@ function App(props) {
     adjective: ""
   });
 
+  const ChangeCategories = value => {
+    setCategories(value)
+    console.log('from change categories', value)
+  }
+
   return (
     <div className="App">
       <Navbar />
@@ -43,7 +49,7 @@ function App(props) {
         <Switch>
           <MadLibContext.Provider value={{ madLibs, setMadlibs }}>
             <WordsContext.Provider value={{ words, setWords }}>
-              <CategoriesContext.Provider value={{ categories, setCategories }}>
+              <CategoriesContext.Provider value={{ categories, setCategories, ChangeCategories }}>
                 <Route exact path="/" component={Welcome} />
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/login" component={Login} />
