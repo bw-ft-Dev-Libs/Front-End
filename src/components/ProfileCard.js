@@ -5,7 +5,9 @@ const ProfileCard = props => {
   return (
     <div>
       <Card>
-        <p>{props.lib.lib}</p>
+        {/* <p>{props.lib.lib}</p> */}
+        <p>ProfileCard</p>
+        <p>Display Some Data Here</p>
       </Card>
 
       <button>Edit</button>
@@ -15,3 +17,6 @@ const ProfileCard = props => {
 };
 
 export default ProfileCard;
+
+//Styling for buttons and a delete confirmation window 
+//available in DeleteButtonCode.js deadfile

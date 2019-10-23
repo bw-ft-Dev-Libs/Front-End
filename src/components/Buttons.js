@@ -2,39 +2,32 @@
 //NAVBAR CREATED BY J.ATWOOD
 
 import React from "react";
-import { Button, A, Test, Fun } from "../styles/ButtonStyles";
 import { AcctLink } from "../styles/FormsStyles";
+import Button from "@material-ui/core/Button";
+import { withStyles } from '@material-ui/core/styles';
 
-
-const ButtonReg = () => {
-    return (
-        <Test>
-            <Button>
-                <A href="/register">REGISTER</A>
-            </Button>
-        </Test>
-    )
-
-}
-
-const ButtonLog = () => {
-    return (
-        <Test>
-            <Button>
-                <A href="/login">LOGIN</A>
-            </Button>
-        </Test>
-    )
-
-}
+const StyledButton = withStyles({
+    root: {
+      background: 'linear-gradient(45deg, #29ABA4 30%, #E0FFFF 90%)',
+      borderRadius: 3,
+      border: 0,
+      color: 354458,
+      height: 48,
+      padding: '0 30px',
+      boxShadow: '0 3px 5px 2px rgba(53, 68, 88, .3)',
+    },
+    label: {
+      textTransform: 'capitalize',
+    },
+  })(Button);
 
 const ButtonFun = () => {
     return (
-        <Test>
-            <Fun>
-                <A href="/input">Create Your Own DevLib!</A>
-            </Fun>
-        </Test>
+        <form>
+        <StyledButton href="/input">
+            CREATE YOUR OWN DEVLIB
+        </StyledButton>
+        </form>
     )
 }
 
@@ -55,4 +48,4 @@ const ButtonSign = () => {
 }
 
 
-export { ButtonReg, ButtonLog, ButtonAcct, ButtonSign, ButtonFun }
+export { ButtonAcct, ButtonSign, ButtonFun }
