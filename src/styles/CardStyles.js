@@ -6,6 +6,7 @@ const CardCont = styled.div`
   flex-wrap: wrap;
   width: 100%;
   background-color: lightblue;
+  justify-content: space-around;
 `;
 
 const Card = styled.div`

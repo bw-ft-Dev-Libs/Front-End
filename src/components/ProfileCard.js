@@ -1,7 +1,9 @@
 import React from "react";
+
 import { Card } from "../styles/CardStyles";
 import  SimpleModal  from './Modal'
 import axiosWithAuth from "../utils/axiosWithAuth";
+
 
 const ProfileCard = props => {
 
@@ -32,12 +34,14 @@ const ProfileCard = props => {
 
   return (
     <div>
+
       <Card>
         <p>{props.lib.lib}</p>
         <button onClick={handleOpen}>Edit</button>
         {open && <SimpleModal handleClose={handleClose} open={open} lib={props.lib} isFetching={props.isFetching} setFetching={props.setFetching} />}
         <button onClick={handleDelete}>Delete</button>
       </Card>
+
 
     </div>
   );
