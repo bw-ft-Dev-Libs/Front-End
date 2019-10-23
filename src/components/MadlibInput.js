@@ -1,6 +1,8 @@
 import React, {useContext} from 'react'
 import {axiosWithAuth} from "../utils/axiosWithAuth"
 import {WordsContext} from '../hooks/WordsContext'
+import Dropdown from './Dropdown'
+import {CategoriesContext} from '../hooks/CategoriesContext'
 
 
 
@@ -25,6 +27,7 @@ const MadlibInput = (props) => {
         <div className='form-container'>
             <h2 className='form-header'> Enter your words to create a Dev-Lib!</h2>
             <form className='input-form' onSubmit={handleSubmit}>
+                <Dropdown />
                 <label>
                     Enter a noun.
                     <input name='noun1' type='text' value={words.noun1} onChange={handleChange} />
@@ -69,6 +72,7 @@ const MadlibInput = (props) => {
                     Enter a pronoun.
                     <input name='pNoun2' type='text' value={words.pNoun2} onChange={handleChange} />
                 </label>
+                
 
                 <button className='input-submit-button'> Submit </button>
 
