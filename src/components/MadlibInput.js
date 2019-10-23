@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {axiosWithAuth} from "../utils/axiosWithAuth"
+
 import {WordsContext} from '../hooks/WordsContext'
 import Dropdown from './Dropdown'
 import {CategoriesContext} from '../hooks/CategoriesContext'
@@ -7,7 +7,7 @@ import {CategoriesContext} from '../hooks/CategoriesContext'
 
 
 const MadlibInput = (props) => {
-    
+    const { categories, setCategories } = useContext(CategoriesContext)
     const {words, setWords} = useContext(WordsContext)
     const handleChange = e => {
         e.preventDefault()

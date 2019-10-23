@@ -6,39 +6,54 @@ import ProfileCard from "./ProfileCard";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { CardCont } from "../styles/CardStyles";
 
-export default function Profile(props) {
-  const [profLib, setprofLib] = useState([]);
-
-  const handleChanges = e => {
-    setprofLib({ ...profLib, [e.target.name]: e.target.value });
-  };
-
-  const profile = e => {
-    e.preventDefault();
-    axiosWithAuth()
-      .get(`/api/devLib/${props.user_id}`, profLib)
+export default function Profile() {
+  const [profLib, setprofLib] = useState();
+  const id = Number(localStorage.getItem('user_id'))
+  
+  useEffect(()=>{
+      axiosWithAuth()
+      .get(`/api/devLib/`)
       .then(res => {
-        console.log(res.data, "libs!!!");
-        localStorage.getItem("token", res.data.token);
-        localStorage.getItem("user_id", res.data.userId);
-        props.history.push("/profile");
+        console.log(res.data.data, "libs!!!");
+        console.log(res.data.data[0].id)
+        setprofLib(res.data.data)        
+               
       })
       .catch(err => {
         console.log(err);
-      });
-  };
+      });  
+  }, [])
+
+  
+// console.log(profLib[0])
+  
+ 
+  if (!profLib){
+    return <h1>Loading..</h1>
+  }
+  else if (profLib.length === 0) {
+    return (
+      <h2>You haven't created any Dev-Libs!</h2>
+    )
+  }
 
   return (
     <div>
-      <CardCont>
-        {profLib.map(lib => (
-          <ProfileCard key={lib.id} lib={lib} user_id={lib.user_id} />
-        ))}
-      </CardCont>
-      <div>
-        <h2>Profile</h2>
-        <Logout />
-      </div>
+      {profLib.map(lib => {
+        if (lib.user_id === id) {
+           return (
+             <CardCont key={lib.id}>        
+                <ProfileCard lib={lib}  />
+              </CardCont>
+           ) 
+        }
+             
+      })}
+             
+          
+  
+  <Logout />    
+      
     </div>
   );
 }
