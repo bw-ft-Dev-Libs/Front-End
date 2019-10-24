@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import "./App.css";
 import "./styling/madlibInput.css";
 import "./styling/dropdown.css";
-import './styling/modal.css'
+import './styling/create.css'
 //Components
 import Welcome from "./components/Welcome";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
 import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
@@ -44,8 +44,8 @@ function App(props) {
 
   return (
     <div className="App">
-      <Navbar />
       <Router>
+      <Navbar />      
         <Switch>
           <MadLibContext.Provider value={{ madLibs, setMadlibs }}>
             <WordsContext.Provider value={{ words, setWords }}>

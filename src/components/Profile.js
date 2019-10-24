@@ -4,7 +4,9 @@ import React, { useEffect, useState } from "react";
 import Logout from "./Logout";
 import ProfileCard from "./ProfileCard";
 import axiosWithAuth from "../utils/axiosWithAuth";
-import { CardCont, Card } from "../styles/CardStyles";
+import { CardCont} from "../styles/CardStyles";
+import { ButtonFun } from "./Buttons";
+
 
 
 export default function Profile() {
@@ -15,12 +17,13 @@ export default function Profile() {
 
   const [isFetching, setFetching] = useState(false)
   const id = Number(localStorage.getItem('user_id'))
-  
+  console.log(id)
   
   useEffect(()=>{
       axiosWithAuth()
       .get(`/api/devLib/`)
       .then(res => {        
+        console.log('from useeffect', res.data)
         setprofLib(res.data.data);
       })
       .catch(err => {
@@ -53,7 +56,9 @@ export default function Profile() {
            ) 
         }
       })}
+      <ButtonFun />
       <Logout />
+
     </CardCont>
 
   );

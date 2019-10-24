@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 
 import {WordsContext} from '../hooks/WordsContext'
 import Dropdown from './Dropdown'
-import {CategoriesContext} from '../hooks/CategoriesContext'
+
 
 
 
