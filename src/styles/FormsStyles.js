@@ -12,7 +12,7 @@ const AcctLink = styled.div `
 
 //Register/Login Form Boxes
 const Box = styled.div `
-    border: magenta solid 2px;
+    
     display: flex;
     flex-direction: column;
     height: 100%
@@ -22,7 +22,7 @@ const Box = styled.div `
 
 //Register and Login Form Cards
 const Card = styled.div `
-    border: teal solid 2px;
+    
     display: flex;
     width: 20%;
     flex-direction: column;
