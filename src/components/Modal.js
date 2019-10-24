@@ -52,24 +52,20 @@ export default function SimpleModal(props) {
       const updatedLib = {
           ...props.lib, 
           lib: add
-      } 
-    
-    props.setFetching(true)
-   
+      }     
+      props.setFetching(true)    
       axiosWithAuth()
-        .put('/api/devLib', updatedLib)
-        .then (res =>{
-            if (res.status === 200){
-                props.setFetching(false)
-                
-                console.log(res)
-            }
-            props.handleClose()
-        })
-        .catch(err => console.log(err))
-        
-        // axiosWithAuth()
-        //     .put('/api/devLibs', )
+          .put('/api/devLib', updatedLib)
+          .then (res =>{
+              if (res.status === 200){
+                  props.setFetching(false)
+                  
+                  console.log(res)
+              }
+              props.handleClose()
+          })
+          .catch(err => console.log(err))          
+         
     }
 
   return (

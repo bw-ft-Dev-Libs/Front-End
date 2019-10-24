@@ -19,7 +19,6 @@ export default function Profile() {
   
   useEffect(()=>{
       axiosWithAuth()
-
       .get(`/api/devLib/`)
       .then(res => {
         console.log(res.data.data, "libs!!!");
@@ -49,17 +48,13 @@ export default function Profile() {
     <CardCont>
       {profLib.map(lib => {
         if (lib.user_id === id) {
-
            return (
              <CardCont key={lib.id}>        
-                <ProfileCard lib={lib} isFetching={isFetching} setFetching={setFetching}  />                 
-                                    
+                <ProfileCard lib={lib} isFetching={isFetching} setFetching={setFetching}  />                         
               </CardCont>
            ) 
-
         }
       })}
-
       <Logout />
     </CardCont>
 

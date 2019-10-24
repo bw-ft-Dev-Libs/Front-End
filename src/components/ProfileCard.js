@@ -5,6 +5,7 @@ import  SimpleModal  from './Modal'
 import axiosWithAuth from "../utils/axiosWithAuth";
 
 
+
 const ProfileCard = props => {
 
   const [open, setOpen] = React.useState(false);
@@ -23,13 +24,14 @@ const ProfileCard = props => {
       id: props.lib.id,
       user_id: props.lib.user_id
     }
-    console.log('from delete', typeof(deleteItem.id), typeof(deleteItem.user_id))
+    console.log('from delete', deleteItem)
     axiosWithAuth()
       .delete('/api/devLib', deleteItem)      
       .then(res=>{
         props.setFetching(false)
+        console.log("delete response", res)
       })
-      .catch(err=> console.log(err))
+      .catch(err=> console.log('this is from the catch,', err.message))
   }
 
   return (
