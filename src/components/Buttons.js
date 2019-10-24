@@ -34,15 +34,6 @@ const ButtonFun = () => {
     )
 }
 
-const ButtonAdd = () => {
-    return (
-        <form>
-        <StyledButton >
-            Add your DEVLIB
-        </StyledButton>
-        </form>
-    )
-}
 
 const ButtonAcct = () => {
     return (
@@ -61,4 +52,4 @@ const ButtonSign = () => {
 }
 
 
-export { ButtonAcct, ButtonSign, ButtonFun, ButtonAdd }
+export { ButtonAcct, ButtonSign, ButtonFun }
