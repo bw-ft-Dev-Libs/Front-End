@@ -5,6 +5,7 @@ import React from "react";
 import { AcctLink } from "../styles/FormsStyles";
 import Button from "@material-ui/core/Button";
 import { withStyles } from '@material-ui/core/styles';
+import {Link} from 'react-router-dom'
 
 const StyledButton = withStyles({
     root: {
@@ -23,9 +24,21 @@ const StyledButton = withStyles({
 
 const ButtonFun = () => {
     return (
-        <form>
-        <StyledButton href="/input">
+        // <form>
+        <Link to='/input'>
+        <StyledButton >
             CREATE YOUR OWN DEVLIB
+        </StyledButton>
+        </Link>
+        // </form>
+    )
+}
+
+const ButtonAdd = () => {
+    return (
+        <form>
+        <StyledButton >
+            Add your DEVLIB
         </StyledButton>
         </form>
     )
@@ -48,4 +61,4 @@ const ButtonSign = () => {
 }
 
 
-export { ButtonAcct, ButtonSign, ButtonFun }
+export { ButtonAcct, ButtonSign, ButtonFun, ButtonAdd }

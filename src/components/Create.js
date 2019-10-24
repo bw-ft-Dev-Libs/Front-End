@@ -4,6 +4,7 @@ import { WordsContext } from '../hooks/WordsContext'
 import axiosWithAuth from '../utils/axiosWithAuth';
 import {CategoriesContext} from '../hooks/CategoriesContext'
 import LibCard from './LibCard'
+import { ButtonAdd } from "./Buttons";
 
 
 
@@ -54,12 +55,13 @@ const CreateMadLib = props => {
     }, [])
 
     const handleSubmit = e => {
+            console.log('from handle submit', e)
                console.log(addMadLib)
             axiosWithAuth()
                 .post('/api/devLib', addMadLib )
                 .then((res) => {
                     console.log(res.data)                    
-                    props.history.push('/devlibs')
+                    // props.history.push('/devlibs')
                 })
                 .catch(err => console.log(err.response))
     }

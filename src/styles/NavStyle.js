@@ -27,7 +27,7 @@ const Logo = styled.div `
     // display: flex;
 `
 
-const NavElems = styled.div `
+const NavElems = styled.nav `
     // border: yellow 2px solid;
     width: 50%;
     height: 50px;
