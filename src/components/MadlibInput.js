@@ -7,7 +7,7 @@ import {CategoriesContext} from '../hooks/CategoriesContext'
 
 
 const MadlibInput = (props) => {
-    const { categories, setCategories } = useContext(CategoriesContext)
+    
     const {words, setWords} = useContext(WordsContext)
     const handleChange = e => {
         e.preventDefault()

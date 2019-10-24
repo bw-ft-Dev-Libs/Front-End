@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, {  useContext } from 'react'
 import {CategoriesContext} from '../hooks/CategoriesContext'
 
 const Dropdown = () => {
@@ -6,7 +6,7 @@ const Dropdown = () => {
     const { setCategories} = useContext(CategoriesContext)
 
     const ChangeCategories = e => {
-       const Dropdown = document.getElementById('select')
+       
        console.log('ran on initial render', e.target.value)
        setCategories(parseInt(e.target.value))
       }
