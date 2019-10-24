@@ -7,6 +7,7 @@ export default function axiosWithAuth() {
         baseURL: 'https://dev-libs-test.herokuapp.com',
         headers: {
             Authorization: token
+            
         }
     })
 }
