@@ -29,9 +29,10 @@ const ProfileCard = props => {
       .delete('/api/devLib', deleteItem)      
       .then(res=>{
         props.setFetching(false)
+        console.log('in axios delete item', deleteItem)
         console.log("delete response", res)
       })
-      .catch(err=> console.log('this is from the catch,', err.message))
+      .catch(err=> console.log('this is from the catch,', deleteItem, err.message))
   }
 
   return (
