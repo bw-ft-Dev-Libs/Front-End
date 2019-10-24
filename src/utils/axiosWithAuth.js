@@ -6,7 +6,9 @@ export default function axiosWithAuth() {
     return axios.create({
         baseURL: 'https://dev-libs-test.herokuapp.com',
         headers: {
-            Authorization: token
+            authorization: token,
+            "content-type": "application/json",
+            
             
         }
     })

@@ -20,9 +20,7 @@ export default function Profile() {
   useEffect(()=>{
       axiosWithAuth()
       .get(`/api/devLib/`)
-      .then(res => {
-        console.log(res.data.data, "libs!!!");
-        console.log(res.data.data[0].id);
+      .then(res => {        
         setprofLib(res.data.data);
       })
       .catch(err => {

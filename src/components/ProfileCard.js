@@ -18,7 +18,6 @@ const ProfileCard = props => {
   };
 
  const handleDelete = () => {
-   console.log(props.lib)
     props.setFetching(true)
     const deleteItem = {
       id: props.lib.id,
@@ -26,25 +25,25 @@ const ProfileCard = props => {
     }
     console.log('from delete', deleteItem)
     axiosWithAuth()
-      .delete('/api/devLib', deleteItem)      
+      .delete(`/api/devLib/${props.lib.id}`)      
       .then(res=>{
         props.setFetching(false)
         console.log('in axios delete item', deleteItem)
         console.log("delete response", res)
       })
-      .catch(err=> console.log('this is from the catch,', deleteItem, err.message))
+      .catch(err=> console.log('this is from the catch,', deleteItem, err))
   }
+
+  
 
   return (
     <div>
 
       <Card>
-
         <p>{props.lib.lib}</p>
         <button onClick={handleOpen}>Edit</button>
         {open && <SimpleModal handleClose={handleClose} open={open} lib={props.lib} isFetching={props.isFetching} setFetching={props.setFetching} />}
-        <button onClick={handleDelete}>Delete</button>
-
+        <button onClick={handleDelete}>Delete</button> 
       </Card>
 
 
