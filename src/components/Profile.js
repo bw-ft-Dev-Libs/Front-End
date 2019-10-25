@@ -18,7 +18,7 @@ export default function Profile() {
     axiosWithAuth()
       .get(`/api/devLib/`)
       .then(res => {
-        console.log("from useeffect", res.data);
+        console.log("from profile get useeffect", res.data);
         setprofLib(res.data.data);
       })
       .catch(err => {
@@ -37,9 +37,8 @@ export default function Profile() {
       {profLib.map(lib => {
         if (lib.user_id === id) {
           return (
-            <CardCont>
-              <ProfileCard
-                key={lib.id}
+            <CardCont key={lib.id}>
+              <ProfileCard                
                 lib={lib}
                 isFetching={isFetching}
                 setFetching={setFetching}

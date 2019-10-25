@@ -39,7 +39,7 @@ export default function SimpleModal(props) {
 
     React.useEffect(()=>{
         setAdd(props.lib.lib)
-        console.log('use effect', props.lib)
+        console.log('modal use effect', props.lib)
   
     }, [props.open])
    
@@ -78,7 +78,7 @@ export default function SimpleModal(props) {
       >
         <div style={modalStyle} className={classes.paper}>
           <h2 id="simple-modal-title">Edit your Dev-Lib</h2>
-          <textarea cols='50' rows='10' type='text'  value={add} onChange={handleChange}>
+          <textarea cols='50' rows='15' type='text'  value={add} onChange={handleChange}>
             
           </textarea> 
           <button onClick={handleSubmit}> Submit </button>         
