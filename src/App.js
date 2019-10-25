@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import "./App.css";
 import "./styling/madlibInput.css";
 import "./styling/dropdown.css";
-import './styling/create.css'
+import "./styling/create.css";
 //Components
 import Welcome from "./components/Welcome";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
 import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
@@ -38,18 +38,20 @@ function App(props) {
   });
 
   const ChangeCategories = value => {
-    setCategories(value)
-    console.log('from change categories', value)
-  }
+    setCategories(value);
+    console.log("from change categories", value);
+  };
 
   return (
     <div className="App">
       <Router>
-      <Navbar />      
+        <Navbar />
         <Switch>
           <MadLibContext.Provider value={{ madLibs, setMadlibs }}>
             <WordsContext.Provider value={{ words, setWords }}>
-              <CategoriesContext.Provider value={{ categories, setCategories, ChangeCategories }}>
+              <CategoriesContext.Provider
+                value={{ categories, setCategories, ChangeCategories }}
+              >
                 <Route exact path="/" component={Welcome} />
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/login" component={Login} />
