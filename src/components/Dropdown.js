@@ -16,7 +16,7 @@ const Dropdown = () => {
         //     <li onClick={()=> ChangeCategories(1)}>Action </li>
         // </ul>
         <select id="select" className="select-category" onChange={(e) => ChangeCategories(e)}>
-            <option>Set Categories</option>
+            <option>Select a Category</option>
             <option value='1'>Action</option>
             <option value='2'>Adventure</option>
             <option value='3'>Code</option>
