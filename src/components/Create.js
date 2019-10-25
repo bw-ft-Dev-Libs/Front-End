@@ -56,7 +56,7 @@ Many ${verb2} tutorials use that command as their very first ${noun4}, because i
       .post("/api/devLib", addMadLib)
       .then(res => {
         console.log(res.data);
-        // props.history.push('/devlibs')
+        props.history.push("/devlibs");
       })
       .catch(err => console.log(err.response));
   };
