@@ -17,13 +17,13 @@ const MadlibInput = props => {
   const handleSubmit = e => {
     e.preventDefault();
     props.history.push("/create");
-    reset("noun");
+    
   };
 
   return (
     <div className="form-container">
       <h2 className="form-header"> Enter your words to create a Dev-Lib!</h2>
-      <form className="input-form" onSubmit={handleSubmit}>
+      <form className="input-form" id='input-form' onSubmit={handleSubmit}>
         <Dropdown />
         <label>
           Enter a noun.
@@ -125,7 +125,7 @@ const MadlibInput = props => {
           />
         </label>
 
-        <button className="input-submit-button"> Submit </button>
+        <button onSubmit={handleSubmit} className="input-submit-button"> Submit </button>
       </form>
     </div>
   );

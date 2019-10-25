@@ -7,7 +7,7 @@ import LibCard from "./LibCard";
 import { ButtonAdd } from "./Buttons";
 
 const CreateMadLib = props => {
-  const { words } = useContext(WordsContext);
+  const { words, setWords } = useContext(WordsContext);
   const { categories } = useContext(CategoriesContext);
   const data = {
     1: {
@@ -16,7 +16,7 @@ const CreateMadLib = props => {
       category_id: 1
     },
     2: {
-      lib: `The series centers on ${words.pNoun2}, the elf-like player ${words.noun1} and chief protagonist. Link is often given the task of rescuing Princess ${words.pNoun1} and the kingdom of Hyrule from Ganon, an evil warlord turned demon who is the principal ${words.noun5} of the series; however, other settings and antagonists have ${words.verb2}ed in several games. The plots ${words.adverb} involve the Triforce, a relic representing the virtues of ${words.noun2}, Wisdom and Power that together are ${words.adjective}. The ${words.noun3} in each game is usually not the same incarnation of ${words.pNoun2}, but a few exceptions ${words.verb1}.`,
+      lib: `The series centers on ${words.pNoun2}, the elf-like player ${words.noun1} and chief protagonist. ${words.pNoun2} is often given the task of rescuing Princess ${words.pNoun1} and the kingdom of Hyrule from Ganon, an evil warlord turned demon who is the principal ${words.noun5} of the series; however, other settings and antagonists have ${words.verb2}ed in several games. The plots ${words.adverb} involve the Triforce, a relic representing the virtues of ${words.noun2}, Wisdom and Power that together are ${words.adjective}. The ${words.noun3} in each game is usually not the same incarnation of ${words.pNoun2}, but a few exceptions ${words.verb1}.`,
       user_id: Number(localStorage.getItem("user_id")),
       category_id: 2
     },
@@ -57,6 +57,7 @@ const CreateMadLib = props => {
       .then(res => {
         console.log(res.data);
         props.history.push("/devlibs");
+        setWords('')
       })
       .catch(err => console.log(err.response));
   };
